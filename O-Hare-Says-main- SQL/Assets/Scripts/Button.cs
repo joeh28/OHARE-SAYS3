@@ -7,13 +7,19 @@ using UnityEngine;
 public class Button : MonoBehaviour
 {
     public int ButtonIndex { get; set; }
-    [SerializeField]GameManager gm;
-    [SerializeField]Color defaultColor;    
-    [SerializeField]Color highlightColor;
-    [SerializeField]float resetDelay = .25f;
-    
-    
 
+    [SerializeField]
+    private GameManager gm; 
+
+    [SerializeField]
+    private Color defaultColor; 
+    
+    [SerializeField]
+    private Color highlightColor;
+
+    [SerializeField]
+    float resetDelay = .25f;
+    
     AudioSource sound;
 
 
