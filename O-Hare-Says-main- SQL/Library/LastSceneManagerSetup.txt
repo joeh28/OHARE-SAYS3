@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/LeaderboardManager/Scenes/DisplayScoreTest.unity
+- path: Assets/Scenes/O Hare Says.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
