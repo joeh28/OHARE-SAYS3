@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayMenu : MonoBehaviour
 {
     public GameManager gm;
+    public string Url;
 
     public void PlayButton()
     {
@@ -39,6 +40,7 @@ public class PlayMenu : MonoBehaviour
 
     public void doQuitGame()
     {
+        Application.OpenURL(Url);
         Application.Quit();
         Debug.Log("Game is exiting");
 
