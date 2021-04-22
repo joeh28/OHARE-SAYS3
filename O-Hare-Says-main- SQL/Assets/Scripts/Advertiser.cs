@@ -23,6 +23,7 @@ public class Advertiser : MonoBehaviour
 
     private void Update()
     {
+        //SwitchLogo(0, 1);
         FillHorizontalRight(0, 1);
         FillVerticalTop(1, 2);
         FillRadial180Left(2, 3);
@@ -40,7 +41,28 @@ public class Advertiser : MonoBehaviour
         FillHorizontalRight2(14, 15);
         FillRadius360Left(15, 16);
         FillRadius90BottomLeft2(16, 17);
-        FillRadial180Top(17, 0); 
+        FillRadial180Top(17, 0);
+    }
+
+    private void SwitchLogo(int index, int nextIndex)
+    {
+        if (images[index].fillAmount >= 0 && imageIndex == 0)
+        {
+            backImages[index].SetActive(true);
+            currentTime -= speed * Time.deltaTime;
+            images[index].fillMethod = Image.FillMethod.Horizontal;
+            images[index].fillOrigin = (int)Image.OriginHorizontal.Right;
+            images[index].fillAmount = currentTime;
+        }
+        if (images[index].fillAmount <= 0 && imageIndex == 0)
+        {
+            backImages[index].SetActive(false);
+            images[index].fillAmount = 0;
+            images[nextIndex].fillAmount = 1;
+
+            imageIndex += 1;
+            currentTime = startingTime;
+        }
     }
     private void FillHorizontalRight(int index, int nextIndex)
     {
