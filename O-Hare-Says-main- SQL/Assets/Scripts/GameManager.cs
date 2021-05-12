@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] float pickDelay = .4f;
     [SerializeField] int pickNumber = 0;
     [SerializeField] Score score;
-    [SerializeField] Button[] button;
+    [SerializeField] MyButton[] button;
 
     [Header("Color Order")]
     [SerializeField] List<int> colorOrder;

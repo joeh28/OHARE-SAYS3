@@ -37,19 +37,18 @@ public class PlayMenu : MonoBehaviour
         Activate(false);
     }
 
-
+    [System.Obsolete]
     public void doQuitGame()
     {
-        Application.OpenURL(Url);
+        //        Application.OpenURL(Url);
+        //        Application.Quit();
+        //        Debug.Log("Game is exiting");
+
+        //#if UNITY_EDITOR
+        //        UnityEditor.EditorApplication.isPlaying = false;
+        //#endif
+
+        Application.ExternalEval("window.location=http://www.flyingwithbutchohare.com");
         Application.Quit();
-        Debug.Log("Game is exiting");
-
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#endif
     }
-
-
-
-
 }
