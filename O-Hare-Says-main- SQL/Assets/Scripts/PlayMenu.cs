@@ -40,15 +40,15 @@ public class PlayMenu : MonoBehaviour
     [System.Obsolete]
     public void doQuitGame()
     {
-        //        Application.OpenURL(Url);
-        //        Application.Quit();
-        //        Debug.Log("Game is exiting");
+                Application.OpenURL(Url);
+                Application.Quit();
+                Debug.Log("Game is exiting");
 
-        //#if UNITY_EDITOR
-        //        UnityEditor.EditorApplication.isPlaying = false;
-        //#endif
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+        #endif
 
-        Application.ExternalEval("window.location=http://www.flyingwithbutchohare.com");
-        Application.Quit();
+        //Application.ExternalEval("window.location=http://www.flyingwithbutchohare.com");
+        //Application.Quit();
     }
 }

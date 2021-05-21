@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class QuitButton : MonoBehaviour
 {
     public Button button;
+    public string Url;
 
     private void Start()
     {
@@ -14,7 +15,15 @@ public class QuitButton : MonoBehaviour
 
     public void ButtonPressed()
     {
-        Application.ExternalEval(script: "window.location=http://www.flywithbutchohare.com");
+        Application.OpenURL(Url);
         Application.Quit();
+        Debug.Log("Game is exiting");
+
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+
+        //Application.ExternalEval(script: "window.location=http://www.flywithbutchohare.com");
+        //Application.Quit();
     }
 }
